@@ -1,4 +1,5 @@
 title: Micro-Learning
 description: Focused insights for curious minds
-theme: jekyll-theme-minimal
 show_excerpts: true
+# Removed theme to avoid dependency issues
+# Using default Jekyll layout instead
