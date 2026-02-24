@@ -1,6 +1,10 @@
-# Micro-Learning
+<div style="text-align: center; margin-bottom: 2rem;">
+  <img src="/assets/title.svg" alt="Micro-Learning" style="max-width: 100%; height: auto;"/>
+</div>
 
-Curated insights for the curious mind.
+<div style="text-align: center; margin-bottom: 2rem;">
+  <p><em>Curated insights for the curious mind</em></p>
+</div>
 
 <ul>
 {% for post in site.posts %}
