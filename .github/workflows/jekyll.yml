@@ -18,7 +18,7 @@ jobs:
           docker run --rm \
             -v ${PWD}:/srv/jekyll \
             -v ${PWD}/_site:/srv/jekyll/_site \
-            jekyll/jekyll:4.3.3 \
+            jekyll/jekyll:latest \
             jekyll build --future
       - name: Deploy to GitHub Pages
         if: github.event_name == 'push'
