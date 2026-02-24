@@ -16,10 +16,11 @@ jobs:
       - name: Build Jekyll site with Docker
         run: |
           docker run --rm \
+            --user $(id -u):$(id -g) \
             -v ${PWD}:/srv/jekyll \
             -v ${PWD}/_site:/srv/jekyll/_site \
             jekyll/jekyll:latest \
-            jekyll build --future
+            jekyll build --future --destination /srv/jekyll/_site
       - name: Deploy to GitHub Pages
         if: github.event_name == 'push'
         uses: peaceiris/actions-gh-pages@v3
