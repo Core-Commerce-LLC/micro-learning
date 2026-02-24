@@ -13,12 +13,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Install dependencies
+      - name: Build Jekyll site with Docker
         run: |
-          gem install bundler
-          bundle install
-      - name: Build Jekyll site
-        run: bundle exec jekyll build
+          docker run --rm \
+            -v ${PWD}:/srv/jekyll \
+            -v ${PWD}/_site:/srv/jekyll/_site \
+            jekyll/jekyll:4.3.3 \
+            jekyll build --future
       - name: Deploy to GitHub Pages
         if: github.event_name == 'push'
         uses: peaceiris/actions-gh-pages@v3
